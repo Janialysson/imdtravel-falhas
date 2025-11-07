@@ -28,7 +28,19 @@ public class AirlinesHubController {
     }
 
     @PostMapping("/sell")
-    public Map<String, Object> sellFlight(@RequestBody Map<String, Object> data) {
+   public Map<String, Object> sellFlight(@RequestBody Map<String, Object> data) {
+        Random random = new Random();
+
+       // Falha Time (10% de chance, atraso de 10s)
+        if (random.nextDouble() < 0.1) {
+            try {
+                System.out.println("[FAILURE] Request 3 - Timeout fault triggered!");
+                Thread.sleep(10000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+        
         Map<String, Object> response = new HashMap<>();
         response.put("transactionId", "TX-" + System.currentTimeMillis());
         response.put("status", "success");
