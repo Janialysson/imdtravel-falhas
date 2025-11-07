@@ -11,6 +11,13 @@ public class AirlinesHubController {
     @GetMapping("/flight")
     public Map<String, Object> getFlight(@RequestParam String flight, @RequestParam String day) {
         Random random = new Random();
+        
+        // Falha Omission (20% de chance)
+        if (random.nextDouble() < 0.2) {
+            System.out.println("[FAILURE] Request 1 - Omission fault triggered!");
+            return null; // não responde
+        }
+
         double value = 500 + random.nextInt(1000); // preço entre 500 e 1500 dólares
 
         Map<String, Object> response = new HashMap<>();
