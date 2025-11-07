@@ -9,7 +9,7 @@ Projeto com 4 microserviços Spring Boot:
 ## Como usar
 
 1. Buildar cada projeto com maven (ou usar uma IDE): No meu caso usei o Prompt de Comando do Windows para rodar cada MicroServiço, pois meu computador não tinha recurso suficientes para rodar no Docker. Basta seguir o passo a passo:
-   ```
+
 Passo 1
 Precisa execultar o Prompt como administrador.
 '''
@@ -32,7 +32,7 @@ mvn spring-boot:run
 
 cd C:\Users\User\Downloads\imdtravel_baseline_multistage\imdtravel_baseline_multistage_falhas\airlineshub
 mvn spring-boot:run
-   ```
+
 Para testar basta abrir o navegador e colocar por exemplo:
 
 Serviço de exchange: http://localhost:8082/convert?value=100
@@ -59,9 +59,9 @@ Por exemplo:
 [FAILURE] Request 1 - Omission fault triggered!
 
 2. Ou usar Docker Compose (requer build dos jars ou imagem build com maven dentro do Dockerfile):
-   ```
+   
    docker compose up --build
-   ```
+   
 
 3. Teste de compra (exemplo):
    ```
